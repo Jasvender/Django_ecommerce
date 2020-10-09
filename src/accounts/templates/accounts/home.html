@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'base/common_banner.html' with title='Account' page_title='Login' %}
+  <section class="login_box_area section_gap">
+    <div class="container">
+      {{ request.user }}
+    </div>
+  </section>
+{% endblock %}

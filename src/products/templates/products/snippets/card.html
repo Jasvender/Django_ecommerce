@@ -1,0 +1,21 @@
+{% load static %}
+<div class="single-product">
+  {% if instance.image %}
+    <a href="{{ instance.get_absolute_url }}"><img class="img-fluid" src="{{ instance.image.url }}" alt="{{ instance.title }}"></a>
+    {% else %}
+      <img class="img-fluid" src="{% static 'images/no-image.png' %}" alt="{{ instance.title }}">
+    {% endif %}
+	<div class="product-details">
+		<h6>{{ instance.title }}</h6>
+		<div class="prd-bottom">
+
+			<a href="" class="social-info">
+        {% include 'products/snippets/update_cart.html' with product=instance cart=cart %}
+			</a>
+			<a href="{{ instance.get_absolute_url }}" class="social-info">
+				<span class="lnr lnr-move"></span>
+				<p class="hover-text">view more</p>
+			</a>
+		</div>
+	</div>
+</div>

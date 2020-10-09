@@ -1,0 +1,5 @@
+<h2>{{ object.title }}</h2>
+<p>{{ object.description|linebreaks }}</p>
+{% if object.image %}
+<img src="{{ object.image.url }}" alt="" class="img-fluid">
+{% endif %}

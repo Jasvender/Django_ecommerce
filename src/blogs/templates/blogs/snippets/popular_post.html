@@ -1,0 +1,11 @@
+{% load static %}
+{% if instance.popular %}
+  <div class="media post_item">
+      <img src="{{ instance.image.url }}" alt="{{ instance.title }}" class="img-fluid">
+      <div class="media-body">
+          <a href="{{ instance.get_absolute_url }}">
+              <h3>{{ instance.title }}</h3>
+          </a>
+      </div>
+  </div>
+{% endif %}

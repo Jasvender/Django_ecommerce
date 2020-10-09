@@ -1,0 +1,41 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% include "base/css.html" %}
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="table-responsive mt-5">
+        <table class="table table-bordered text-center">
+          <thead class="thead-light">
+            <tr>
+              <th>Temp</th>
+              <th>Heart Beat</th>
+              <th>ECG</th>
+              <th>Saline Bottle</th>
+              <th>Fall Detect</th>
+              <th>Date - Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>55</td>
+              <td>96</td>
+              <td>120</td>
+              <td>E</td>
+              <td>Yes</td>
+              <td>14/09/2020 - 09:30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    {% include "base/js.html" %}
+  </body>
+</html>

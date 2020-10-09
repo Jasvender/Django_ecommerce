@@ -1,0 +1,19 @@
+<form action="{% url "cart:update" %}" method="post" class="form form-product-ajax" data-endpoint="{% url "cart:update" %}">
+  {% csrf_token %}
+  <input type="hidden" name="product_id" value="{{ product.id }}">
+  <span class="submit-span">
+    {% if product in cart.products.all %}
+      <button type="submit" name="button" class="btn btn-link btn-none">
+        <span class="ti-remove"></span>
+        <p class="hover-text">Remove?</p>
+      </button>
+    {% else %}
+      <button type="submit" name="button" class="btn btn-link btn-none">
+        <span class="ti-bag"></span>
+        <p class="hover-text">add to bag</p>
+      </button>
+    {% endif %}
+  </span>
+</form>
+
+  </span>

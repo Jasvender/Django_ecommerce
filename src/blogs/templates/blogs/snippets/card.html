@@ -1,0 +1,29 @@
+{% load static %}
+<article class="row blog_item">
+    <div class="col-md-3">
+        <div class="blog_info text-right">
+            <div class="post_tag">
+                <a href="#">Food,</a>
+                <a class="active" href="#">Technology,</a>
+                <a href="#">Politics,</a>
+                <a href="#">Lifestyle</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="blog_post">
+          {% if instance.image %}
+            <a href="{{ instance.get_absolute_url }}"><img class="img-fluid" src="{{ instance.image.url }}" alt="{{ instance.title }}"></a>
+            {% else %}
+              <img class="img-fluid" src="{% static 'images/no-image.png' %}" alt="{{ instance.title }}">
+            {% endif %}
+            <div class="blog_details">
+                <a href="{{ instance.get_absolute_url }}">
+                    <h2>{{ instance.title }}</h2>
+                </a>
+                <p>{{ instance.description|linebreaks|truncatewords:"36" }}</p>
+                <a href="{{ instance.get_absolute_url }}" class="white_bg_btn">View More</a>
+            </div>
+        </div>
+    </div>
+</article>
